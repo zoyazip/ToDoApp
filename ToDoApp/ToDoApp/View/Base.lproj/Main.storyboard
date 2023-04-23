@@ -47,6 +47,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="To Do" id="RUa-i7-unO">
+                        <barButtonItem key="leftBarButtonItem" systemItem="trash" id="AzL-Ah-OpH">
+                            <connections>
+                                <action selector="deleteAllButtonPressed:" destination="sg5-m1-0Rp" id="m6N-JV-yN4"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="DzU-Aw-gX5">
                             <connections>
                                 <action selector="addButtonPressed:" destination="sg5-m1-0Rp" id="vVn-al-8TZ"/>

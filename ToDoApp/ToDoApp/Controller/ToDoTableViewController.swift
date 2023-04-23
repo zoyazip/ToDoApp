@@ -82,6 +82,19 @@ class ToDoTableViewController: UITableViewController {
     
     
     
+    @IBAction func deleteAllButtonPressed(_ sender: UIBarButtonItem) {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = ToDo.fetchRequest()
+            let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+            do {
+                try manageObjectContext?.execute(batchDeleteRequest)
+                toDoLists.removeAll()
+                tableView.reloadData()
+            } catch let error as NSError {
+                print("Error deleting all objects: \(error.localizedDescription)")
+            }
+        
+    }
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
